@@ -360,6 +360,44 @@
   </div>
 </section>
 <!-- KONTAK -->
+ <!-- Form Kontak -->
+<form action="https://formspree.io/f/xbgjlyvk" method="POST" class="mt-10 max-w-lg mx-auto text-left space-y-4">
+
+  <div>
+    <label class="block text-sm text-muted mb-2">Nama</label>
+    <input type="text" name="nama" required
+      class="w-full bg-bg border border-white/10 rounded-lg px-4 py-3 text-text focus:outline-none focus:border-accent transition-colors">
+  </div>
+
+  <div>
+    <label class="block text-sm text-muted mb-2">Email / No. WhatsApp</label>
+    <input type="text" name="kontak" required
+      class="w-full bg-bg border border-white/10 rounded-lg px-4 py-3 text-text focus:outline-none focus:border-accent transition-colors">
+  </div>
+
+  <div>
+    <label class="block text-sm text-muted mb-2">Jenis Kebutuhan</label>
+    <select name="jenis_project" required
+      class="w-full bg-bg border border-white/10 rounded-lg px-4 py-3 text-text focus:outline-none focus:border-accent transition-colors">
+      <option value="">Pilih salah satu</option>
+      <option value="Website Bisnis / Landing Page">Website Bisnis / Landing Page</option>
+      <option value="Aplikasi Android">Aplikasi Android</option>
+      <option value="Sistem / Aplikasi Custom">Sistem / Aplikasi Custom</option>
+      <option value="Lainnya">Lainnya</option>
+    </select>
+  </div>
+
+  <div>
+    <label class="block text-sm text-muted mb-2">Ceritakan Kebutuhan Kamu</label>
+    <textarea name="pesan" rows="4" required
+      class="w-full bg-bg border border-white/10 rounded-lg px-4 py-3 text-text focus:outline-none focus:border-accent transition-colors"></textarea>
+  </div>
+
+  <button type="submit"
+    class="w-full bg-accent text-bg font-semibold py-3.5 rounded-full hover:opacity-90 transition-opacity">
+    Kirim Pesan →
+  </button>
+</form>
 <section id="kontak" class="px-6 py-24">
   <div class="max-w-4xl mx-auto text-center bg-surface border border-white/10 rounded-3xl p-12 md:p-16 relative overflow-hidden">
 
