@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jasa Pembuatan Website & Aplikasi</title>
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font: Sora untuk headline, JetBrains Mono untuk badge tech -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Custom config Tailwind (warna & font tema) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0B0F19',
+            surface: '#131826',
+            text: '#F5F5F7',
+            muted: '#9CA3AF',
+            accent: '#6EE7B7',
+          },
+          fontFamily: {
+            display: ['Sora', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-bg text-text font-display">
+
+  <!-- Konten section akan kita isi bertahap -->
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 bg-bg/80 backdrop-blur-md border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="#" class="text-xl font-extrabold tracking-tight">
+      Nama<span class="text-accent">Studio</span>
+    </a>
+
+    <!-- Menu (desktop) -->
+    <div class="hidden md:flex items-center gap-8 text-sm text-muted">
+      <a href="#layanan" class="hover:text-text transition-colors">Layanan</a>
+      <a href="#portofolio" class="hover:text-text transition-colors">Portofolio</a>
+      <a href="#proses" class="hover:text-text transition-colors">Proses</a>
+      <a href="#kontak" class="hover:text-text transition-colors">Kontak</a>
+    </div>
+
+    <!-- CTA -->
+    <a href="#kontak"
+       class="hidden md:inline-block bg-accent text-bg font-semibold text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">
+      Konsultasi Gratis
+    </a>
+
+    <!-- Hamburger (mobile) -->
+    <button id="menuBtn" class="md:hidden text-text">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Menu mobile (tersembunyi default) -->
+  <div id="mobileMenu" class="hidden md:hidden flex-col gap-4 px-6 pb-4 text-sm text-muted">
+    <a href="#layanan" class="block hover:text-text">Layanan</a>
+    <a href="#portofolio" class="block hover:text-text">Portofolio</a>
+    <a href="#proses" class="block hover:text-text">Proses</a>
+    <a href="#kontak" class="block bg-accent text-bg font-semibold text-center px-5 py-2.5 rounded-full mt-2">Konsultasi Gratis</a>
+  </div>
+</nav>
+<!-- HERO -->
+<section class="relative pt-40 pb-24 px-6 overflow-hidden">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Kolom kiri: Teks -->
+    <div>
+      <span class="inline-block bg-surface border border-white/10 text-accent text-xs font-mono px-3 py-1.5 rounded-full mb-6">
+        ● Siap bantu bisnis kamu Go Digital
+      </span>
+
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+        Website & Aplikasi yang
+        <span class="text-accent">Dibangun Serius</span>,
+        Bukan Sekadar Jadi.
+      </h1>
+
+      <p class="text-muted text-lg mb-8 max-w-md">
+        Saya bantu bisnis kamu punya website atau aplikasi custom yang cepat, rapi, dan benar-benar sesuai kebutuhan — dari nol sampai online.
+      </p>
+
+      <div class="flex flex-wrap gap-4 mb-10">
+        <a href="#kontak"
+           class="bg-accent text-bg font-semibold px-6 py-3.5 rounded-full hover:opacity-90 transition-opacity">
+          Konsultasi Gratis →
+        </a>
+        <a href="#portofolio"
+           class="border border-white/15 text-text font-semibold px-6 py-3.5 rounded-full hover:bg-white/5 transition-colors">
+          Lihat Portofolio
+        </a>
+      </div>
+
+      <!-- Badge tech stack -->
+      <div class="flex flex-wrap gap-2 font-mono text-xs text-muted">
+        <span class="bg-surface border border-white/10 px-3 py-1.5 rounded-md">React</span>
+        <span class="bg-surface border border-white/10 px-3 py-1.5 rounded-md">Flask</span>
+        <span class="bg-surface border border-white/10 px-3 py-1.5 rounded-md">PostgreSQL</span>
+        <span class="bg-surface border border-white/10 px-3 py-1.5 rounded-md">Render</span>
+      </div>
+    </div>
+
+    <!-- Kolom kanan: Mockup visual asimetris -->
+    <div class="relative">
+      <div class="bg-surface border border-white/10 rounded-2xl p-3 rotate-2 shadow-2xl">
+        <div class="bg-bg rounded-xl overflow-hidden">
+          <div class="flex gap-1.5 px-4 py-3 border-b border-white/5">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-yellow-400/70"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-accent/70"></span>
+          </div>
+          <img src="https://via.placeholder.com/600x400/131826/6EE7B7?text=Preview+Project"
+               alt="Preview project" class="w-full h-auto">
+        </div>
+      </div>
+
+      <!-- Card kecil melayang -->
+      <div class="absolute -bottom-6 -left-6 bg-surface border border-white/10 rounded-xl px-5 py-4 shadow-xl -rotate-3">
+        <p class="text-xs text-muted font-mono">Deploy Time</p>
+        <p class="text-2xl font-extrabold text-accent">⚡ 3 Hari</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- LAYANAN -->
+<section id="layanan" class="px-6 py-24">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="mb-12 max-w-xl">
+      <span class="text-accent font-mono text-xs">// layanan</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-4">
+        Apa yang Bisa Saya Bantu?
+      </h2>
+      <p class="text-muted">
+        Dari landing page sederhana sampai aplikasi custom dengan sistem backend — disesuaikan dengan skala dan budget bisnis kamu.
+      </p>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid md:grid-cols-3 gap-5">
+
+      <!-- Card besar (span 2 kolom) -->
+      <div class="md:col-span-2 bg-surface border border-white/10 rounded-2xl p-8 hover:border-accent/40 hover:-translate-y-1 transition-all duration-300">
+        <div class="text-3xl mb-4">🖥️</div>
+        <h3 class="text-xl font-bold mb-2">Website Bisnis & Landing Page</h3>
+        <p class="text-muted text-sm max-w-md">
+          Website company profile, landing page produk, atau portofolio — cepat loading, responsif, dan dioptimasi supaya calon klien percaya dan menghubungi kamu.
+        </p>
+      </div>
+
+      <!-- Card kecil -->
+      <div class="bg-surface border border-white/10 rounded-2xl p-8 hover:border-accent/40 hover:-translate-y-1 transition-all duration-300">
+        <div class="text-3xl mb-4">📱</div>
+        <h3 class="text-xl font-bold mb-2">Aplikasi Android</h3>
+        <p class="text-muted text-sm">
+          Aplikasi kasir, pembukuan, atau kebutuhan operasional UMKM — offline-first, ringan, dan mudah dipakai.
+        </p>
+      </div>
+
+      <!-- Card kecil -->
+      <div class="bg-surface border border-white/10 rounded-2xl p-8 hover:border-accent/40 hover:-translate-y-1 transition-all duration-300">
+        <div class="text-3xl mb-4">⚙️</div>
+        <h3 class="text-xl font-bold mb-2">Sistem & Aplikasi Custom</h3>
+        <p class="text-muted text-sm">
+          SaaS multi-tenant, sistem manajemen, atau dashboard internal — dibangun sesuai alur kerja bisnis kamu, bukan template kaku.
+        </p>
+      </div>
+
+      <!-- Card besar (span 2 kolom) -->
+      <div class="md:col-span-2 bg-surface border border-white/10 rounded-2xl p-8 hover:border-accent/40 hover:-translate-y-1 transition-all duration-300">
+        <div class="text-3xl mb-4">🚀</div>
+        <h3 class="text-xl font-bold mb-2">Deployment & Custom Domain</h3>
+        <p class="text-muted text-sm max-w-md">
+          Sudah punya domain tapi bingung cara online-kan? Saya bantu setup hosting, deployment, sampai domain kamu aktif dengan HTTPS.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- PORTOFOLIO -->
+<section id="portofolio" class="px-6 py-24 bg-surface/30">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="mb-12 max-w-xl">
+      <span class="text-accent font-mono text-xs">// portofolio</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-4">
+        Beberapa Project yang Sudah Dikerjakan
+      </h2>
+      <p class="text-muted">
+        Bukan sekadar mockup — ini project nyata yang sudah dibangun dari nol sampai bisa dipakai.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Card project 1 -->
+      <div class="group bg-surface border border-white/10 rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-300">
+        <div class="overflow-hidden">
+          <img src="https://via.placeholder.com/500x320/131826/6EE7B7?text=DojangOne"
+               alt="Preview DojangOne"
+               class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex flex-wrap gap-2 mb-3 font-mono text-xs text-muted">
+            <span class="bg-bg border border-white/10 px-2.5 py-1 rounded-md">Flask</span>
+            <span class="bg-bg border border-white/10 px-2.5 py-1 rounded-md">PostgreSQL</span>
+          </div>
+          <h3 class="font-bold mb-1.5">DojangOne</h3>
+          <p class="text-muted text-sm">
+            SaaS multi-tenant untuk manajemen dojang taekwondo — pendaftaran member, jadwal, sampai pembayaran.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card project 2 -->
+      <div class="group bg-surface border border-white/10 rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-300">
+        <div class="overflow-hidden">
+          <img src="https://via.placeholder.com/500x320/131826/6EE7B7?text=KasTok"
+               alt="Preview KasTok"
+               class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex flex-wrap gap-2 mb-3 font-mono text-xs text-muted">
+            <span class="bg-bg border border-white/10 px-2.5 py-1 rounded-md">Kotlin</span>
+            <span class="bg-bg border border-white/10 px-2.5 py-1 rounded-md">Room</span>
+          </div>
+          <h3 class="font-bold mb-1.5">KasTok</h3>
+          <p class="text-muted text-sm">
+            Aplikasi kasir offline-first untuk UMKM — ringan, tanpa perlu internet terus-menerus.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card project 3 -->
+      <div class="group bg-surface border border-white/10 rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-300">
+        <div class="overflow-hidden">
+          <img src="https://via.placeholder.com/500x320/131826/6EE7B7?text=Marketplace"
+               alt="Preview Marketplace"
+               class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex flex-wrap gap-2 mb-3 font-mono text-xs text-muted">
+            <span class="bg-bg border border-white/10 px-2.5 py-1 rounded-md">Web</span>
+            <span class="bg-bg border border-white/10 px-2.5 py-1 rounded-md">Digital Product</span>
+          </div>
+          <h3 class="font-bold mb-1.5">Marketplace Digital</h3>
+          <p class="text-muted text-sm">
+            Platform jual-beli produk digital dari nol — mulai dari listing sampai proses checkout.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- PROSES KERJA -->
+<section id="proses" class="px-6 py-24">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="mb-16 max-w-xl">
+      <span class="text-accent font-mono text-xs">// cara kerja</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-4">
+        Prosesnya Simpel, Kamu Tinggal Pantau
+      </h2>
+      <p class="text-muted">
+        Transparan dari awal sampai akhir — kamu tahu persis di tahap mana project kamu berada.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-6 relative">
+
+      <!-- Garis penghubung (desktop only) -->
+      <div class="hidden md:block absolute top-6 left-0 right-0 h-px bg-white/10"></div>
+
+      <!-- Step 1 -->
+      <div class="relative">
+        <div class="w-12 h-12 rounded-full bg-surface border border-accent/40 flex items-center justify-center font-mono text-accent font-bold mb-5 relative z-10">
+          01
+        </div>
+        <h3 class="font-bold mb-2">Diskusi & Brief</h3>
+        <p class="text-muted text-sm">
+          Kita ngobrol soal kebutuhan, target pengguna, dan budget kamu.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="relative">
+        <div class="w-12 h-12 rounded-full bg-surface border border-accent/40 flex items-center justify-center font-mono text-accent font-bold mb-5 relative z-10">
+          02
+        </div>
+        <h3 class="font-bold mb-2">Desain & Approval</h3>
+        <p class="text-muted text-sm">
+          Saya buatkan draft tampilan, kamu review dan kasih masukan sebelum lanjut development.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="relative">
+        <div class="w-12 h-12 rounded-full bg-surface border border-accent/40 flex items-center justify-center font-mono text-accent font-bold mb-5 relative z-10">
+          03
+        </div>
+        <h3 class="font-bold mb-2">Development</h3>
+        <p class="text-muted text-sm">
+          Proses coding berjalan, kamu bisa pantau progress secara berkala.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="relative">
+        <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center font-mono text-bg font-bold mb-5 relative z-10">
+          04
+        </div>
+        <h3 class="font-bold mb-2">Deploy & Serah Terima</h3>
+        <p class="text-muted text-sm">
+          Website/aplikasi online, domain aktif, dan kamu dapat panduan cara mengelolanya.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- KONTAK -->
+<section id="kontak" class="px-6 py-24">
+  <div class="max-w-4xl mx-auto text-center bg-surface border border-white/10 rounded-3xl p-12 md:p-16 relative overflow-hidden">
+
+    <!-- Aksen blur dekoratif -->
+    <div class="absolute -top-24 -right-24 w-64 h-64 bg-accent/20 rounded-full blur-3xl"></div>
+
+    <div class="relative">
+      <span class="text-accent font-mono text-xs">// mulai project</span>
+      <h2 class="text-3xl md:text-5xl font-extrabold mt-3 mb-5">
+        Siap Bikin Website atau Aplikasi Kamu?
+      </h2>
+      <p class="text-muted mb-8 max-w-lg mx-auto">
+        Ceritakan kebutuhan kamu, saya bantu wujudkan — gratis konsultasi awal, tanpa komitmen.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/62812xxxxxxx" target="_blank"
+           class="bg-accent text-bg font-semibold px-7 py-3.5 rounded-full hover:opacity-90 transition-opacity">
+          Chat via WhatsApp →
+        </a>
+        <a href="mailto:kamu@email.com"
+           class="border border-white/15 text-text font-semibold px-7 py-3.5 rounded-full hover:bg-white/5 transition-colors">
+          Kirim Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="px-6 py-10 border-t border-white/5">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <a href="#" class="text-lg font-extrabold">
+      Nama<span class="text-accent">Studio</span>
+    </a>
+    <p class="text-muted text-sm font-mono">
+      © 2026 NamaStudio. Dibangun dengan ❤️ dan Tailwind.
+    </p>
+    <div class="flex gap-4 text-muted text-sm">
+      <a href="#" class="hover:text-text transition-colors">Instagram</a>
+      <a href="#" class="hover:text-text transition-colors">GitHub</a>
+      <a href="#" class="hover:text-text transition-colors">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>
