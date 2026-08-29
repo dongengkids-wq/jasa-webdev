@@ -82,6 +82,21 @@ async function renderDetail() {
 
   document.getElementById('pageTitle').textContent = `${data.title || 'Artikel'} — RND Solution`;
 
+// Update meta tags dinamis untuk SEO & preview share
+const desc = data.excerpt || 'Artikel dari RND Solution.';
+const fullTitle = `${data.title || 'Artikel'} — RND Solution`;
+const pageUrl = `https://rndsolution.id/artikel.html?slug=${slug}`;
+const img = data.thumbnail || 'https://rndsolution.id/assets/og-image.jpg';
+
+document.getElementById('metaDescription').setAttribute('content', desc);
+document.getElementById('canonicalLink').setAttribute('href', pageUrl);
+document.getElementById('ogUrl').setAttribute('content', pageUrl);
+document.getElementById('ogTitle').setAttribute('content', fullTitle);
+document.getElementById('ogDescription').setAttribute('content', desc);
+document.getElementById('ogImage').setAttribute('content', img);
+document.getElementById('twitterTitle').setAttribute('content', fullTitle);
+document.getElementById('twitterDescription').setAttribute('content', desc);
+
   container.innerHTML = `
     <p class="text-accent font-mono text-xs mb-3">${data.date ? new Date(data.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}</p>
     <h1 class="text-3xl md:text-5xl font-extrabold mb-8">${data.title || ''}</h1>
