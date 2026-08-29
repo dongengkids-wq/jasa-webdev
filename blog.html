@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — RND Solution</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { bg: '#0B0F19', surface: '#131826', text: '#F5F5F7', muted: '#9CA3AF', accent: '#6EE7B7' },
+          fontFamily: { display: ['Sora', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-bg text-text font-display">
+
+  <nav class="fixed top-0 w-full z-50 bg-bg/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold tracking-tight">Nama<span class="text-accent">Studio</span></a>
+      <a href="/#kontak" class="bg-accent text-bg font-semibold text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">Konsultasi Gratis</a>
+    </div>
+  </nav>
+
+  <section class="pt-32 pb-24 px-6 max-w-6xl mx-auto">
+    <span class="text-accent font-mono text-xs">// blog</span>
+    <h1 class="text-3xl md:text-5xl font-extrabold mt-3 mb-10">Artikel & Insight</h1>
+
+    <div id="articleList" class="grid md:grid-cols-3 gap-6">
+      <p class="text-muted">Memuat artikel...</p>
+    </div>
+  </section>
+
+  <script src="blog.js"></script>
+</body>
+</html>
