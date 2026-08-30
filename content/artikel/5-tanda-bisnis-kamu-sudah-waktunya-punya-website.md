@@ -1,6 +1,7 @@
 ---
 title: 5 Tanda Bisnis Kamu Sudah Waktunya Punya Website
 date: 2026-08-29T16:33:00.000+07:00
+thumbnail: /assets/uploads/gemini_generated_image_hbaed7hbaed7hbae.jpeg
 excerpt: Masih mengandalkan media sosial saja untuk jualan? Ini beberapa tanda
   kalau bisnis kamu sudah butuh website sendiri.
 ---
