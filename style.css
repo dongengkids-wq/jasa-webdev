@@ -4,9 +4,15 @@ html.light body { background-color: #F5F5F7 !important; color: #0B0F19 !importan
 html.light .bg-bg { background-color: #F5F5F7 !important; }
 html.light .bg-surface { background-color: #FFFFFF !important; }
 html.light .bg-surface\/30 { background-color: rgba(0,0,0,0.03) !important; }
-html.light .text-text { color: #0B0F19 !important; }
-html.light .text-muted { color: #57606a !important; }
+html.light .bg-bg\/80 { background-color: rgba(245,245,247,0.85) !important; }
+html.light .bg-white\/5 { background-color: rgba(0,0,0,0.04) !important; }
+html.light .hover\:bg-white\/5:hover { background-color: rgba(0,0,0,0.04) !important; }
+html.light .border-white\/5 { border-color: rgba(0,0,0,0.06) !important; }
 html.light .border-white\/10 { border-color: rgba(0,0,0,0.08) !important; }
 html.light .border-white\/15 { border-color: rgba(0,0,0,0.12) !important; }
-html.light .border-white\/5 { border-color: rgba(0,0,0,0.06) !important; }
-html.light .bg-bg\/80 { background-color: rgba(245,245,247,0.85) !important; }
+
+html.light .text-text { color: #0B0F19 !important; }
+html.light .text-muted { color: #4B5563 !important; }
+html.light .hover\:text-text:hover { color: #0B0F19 !important; }
+html.light .text-accent { color: #047857 !important; }
+html.light .hover\:text-accent:hover { color: #047857 !important; }

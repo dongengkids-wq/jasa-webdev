@@ -47,23 +47,18 @@
 </head>
 <body class="bg-bg text-text font-display">
 
-  <nav class="fixed top-0 w-full z-50 bg-bg/80 backdrop-blur-md border-b border-white/5">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/" class="text-xl font-extrabold tracking-tight">Nama<span class="text-accent">Studio</span></a>
-      <a href="/blog.html" class="text-muted hover:text-text text-sm">← Kembali ke Blog</a>
-    </div>
-    <button id="themeToggle" class="text-muted hover:text-text text-lg" aria-label="Ganti tema">☀️</button>
-  </nav>
+  <div id="site-header"></div>
 
   <article class="pt-32 pb-24 px-6 max-w-3xl mx-auto">
     <div id="articleContent">
       <p class="text-muted">Memuat artikel...</p>
     </div>
   </article>
-
-  <script src="blog.js"></script>
-  <script src="/floating-wa.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 700, once: true, offset: 50 });</script>
+<div id="site-footer"></div>
+<script src="/theme.js"></script>
+<script src="/script.js"></script>
+<script src="/include.js"></script>
+<script src="/blog.js"></script>
+<script src="/floating-wa.js"></script>
 </body>
 </html>
