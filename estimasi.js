@@ -25,6 +25,14 @@ async function fetchJSON(path) {
   }
 }
 
+function skeletonJenis() {
+  return Array(3).fill(0).map(() => `<div class="p-4 rounded-xl border border-white/10 animate-pulse h-20 bg-white/5"></div>`).join('');
+}
+
+function skeletonFitur() {
+  return Array(4).fill(0).map(() => `<div class="p-4 rounded-xl border border-white/10 animate-pulse h-12 bg-white/5"></div>`).join('');
+}
+
 function renderJenisProject(list) {
   jenisContainer.innerHTML = list.map(item => `
     <button type="button" class="jenis-btn text-left p-4 rounded-xl border border-white/10 hover:border-accent/40 transition-colors"
@@ -88,6 +96,9 @@ function hitungTotal() {
 }
 
 async function init() {
+  jenisContainer.innerHTML = skeletonJenis();
+  fiturContainer.innerHTML = skeletonFitur();
+
   const kalkulator = await fetchJSON('content/kalkulator.json');
   const kontak = await fetchJSON('content/kontak.json');
 
