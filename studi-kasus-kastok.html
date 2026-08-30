@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studi Kasus: KasTok — RND Solution</title>
+  <meta name="description" content="Studi kasus KasTok, aplikasi kasir offline-first untuk UMKM, dibangun oleh RND Solution.">
+  <link rel="canonical" href="https://rndsolution.id/studi-kasus-kastok.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { bg: '#0B0F19', surface: '#131826', text: '#F5F5F7', muted: '#9CA3AF', accent: '#6EE7B7' },
+          fontFamily: { display: ['Sora', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PRHZB9MK99"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PRHZB9MK99');
+  </script>
+</head>
+<body class="bg-bg text-text font-display">
+
+  <nav class="fixed top-0 w-full z-50 bg-bg/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold tracking-tight">Nama<span class="text-accent">Studio</span></a>
+      <a href="/#kontak" class="bg-accent text-bg font-semibold text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">Konsultasi Gratis</a>
+    </div>
+  </nav>
+
+  <section class="pt-32 pb-16 px-6 max-w-4xl mx-auto">
+    <span class="text-accent font-mono text-xs">// studi kasus</span>
+    <h1 class="text-3xl md:text-5xl font-extrabold mt-3 mb-4">KasTok</h1>
+    <p class="text-muted text-lg">
+      Aplikasi kasir offline-first untuk UMKM — ringan, cepat, dan tetap jalan tanpa koneksi internet.
+    </p>
+  </section>
+
+  <section class="px-6 pb-24 max-w-4xl mx-auto">
+    <img src="/assets/portfolio/kastok.png" alt="Preview KasTok" class="w-full rounded-2xl border border-white/10 mb-12">
+
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <div>
+        <p class="text-accent font-mono text-xs mb-2">TECH STACK</p>
+        <p class="text-sm text-muted">Kotlin, Jetpack Compose, Room</p>
+      </div>
+      <div>
+        <p class="text-accent font-mono text-xs mb-2">TIPE PROJECT</p>
+        <p class="text-sm text-muted">Aplikasi Android Offline-first</p>
+      </div>
+      <div>
+        <p class="text-accent font-mono text-xs mb-2">STATUS</p>
+        <p class="text-sm text-muted">Live & Berjalan</p>
+      </div>
+    </div>
+
+    <div class="prose prose-invert max-w-none text-muted leading-relaxed space-y-6">
+      <div>
+        <h2 class="text-2xl font-bold text-text mb-3">Masalah</h2>
+        <p>Banyak pelaku UMKM di Indonesia masih mencatat transaksi secara manual di buku kas, atau mengandalkan aplikasi kasir yang wajib online terus-menerus. Padahal di banyak lokasi usaha, koneksi internet tidak selalu stabil — dan aplikasi yang bergantung penuh pada internet jadi tidak bisa diandalkan saat koneksi terputus di jam sibuk.</p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-text mb-3">Solusi</h2>
+        <p>KasTok dibangun dengan pendekatan offline-first — semua data transaksi tersimpan langsung di perangkat menggunakan database lokal (Room), sehingga aplikasi tetap berfungsi penuh tanpa internet. Fitur mencakup pencatatan
