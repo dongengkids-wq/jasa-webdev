@@ -168,7 +168,7 @@ async function renderDetail() {
     <h1 class="text-3xl md:text-5xl font-extrabold mb-8">${data.title || ''}</h1>
     ${data.thumbnail ? `<img src="${data.thumbnail}" class="w-full rounded-2xl mb-10 border border-white/10">` : ''}
     <div class="prose prose-invert max-w-none text-muted leading-relaxed">
-      ${marked.parse(body)}
+      ${DOMPurify.sanitize(marked.parse(body))}
     </div>
   `;
 
