@@ -26,3 +26,16 @@ async function handleSubmit(event) {
 
   return false;
 }
+// Update nomor WA & email otomatis dari CMS
+const REPO_CONTENT = "dongengkids-wq/jasa-webdev";
+fetch(`https://raw.githubusercontent.com/${REPO_CONTENT}/main/content/kontak.json?t=${Date.now()}`)
+  .then(res => res.ok ? res.json() : null)
+  .then(kontak => {
+    if (!kontak) return;
+    document.querySelectorAll('.js-wa-link').forEach(el => {
+      el.href = `https://wa.me/${kontak.whatsapp}`;
+    });
+    document.querySelectorAll('.js-email-link').forEach(el => {
+      el.href = `mailto:${kontak.email}`;
+    });
+  });

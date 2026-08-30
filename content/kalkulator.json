@@ -1,0 +1,14 @@
+{
+  "jenis_project": [
+    { "nama": "Landing Page", "slug": "landing", "harga_dasar": 1500000, "deskripsi": "1 halaman, fokus konversi" },
+    { "nama": "Website Bisnis", "slug": "website", "harga_dasar": 3500000, "deskripsi": "Multi-halaman, company profile" },
+    { "nama": "Aplikasi Custom", "slug": "aplikasi", "harga_dasar": 8000000, "deskripsi": "Sistem/aplikasi dengan backend" }
+  ],
+  "fitur_tambahan": [
+    { "nama": "Sistem Login & Member", "harga": 1000000 },
+    { "nama": "Integrasi Pembayaran Online", "harga": 1500000 },
+    { "nama": "Dashboard Admin", "harga": 2000000 },
+    { "nama": "CMS (Edit konten tanpa coding)", "harga": 1000000 },
+    { "nama": "Multi-bahasa (ID/EN)", "harga": 800000 }
+  ]
+}

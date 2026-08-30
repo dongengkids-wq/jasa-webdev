@@ -36,3 +36,21 @@ collections:
         fields:
           - { label: "Nomor WhatsApp", name: "whatsapp", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
+      - label: "Kalkulator Harga"
+        name: "kalkulator"
+        file: "content/kalkulator.json"
+        fields:
+          - label: "Jenis Project"
+            name: "jenis_project"
+            widget: "list"
+            fields:
+              - { label: "Nama", name: "nama", widget: "string" }
+              - { label: "Slug (unik, tanpa spasi)", name: "slug", widget: "string" }
+              - { label: "Harga Dasar", name: "harga_dasar", widget: "number", value_type: "int" }
+              - { label: "Deskripsi Singkat", name: "deskripsi", widget: "string" }
+          - label: "Fitur Tambahan"
+            name: "fitur_tambahan"
+            widget: "list"
+            fields:
+              - { label: "Nama Fitur", name: "nama", widget: "string" }
+              - { label: "Harga", name: "harga", widget: "number", value_type: "int" }
