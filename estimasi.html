@@ -1,58 +1,122 @@
-let selectedJenis = null;
-let selectedBase = 0;
-let selectedNamaJenis = '';
-
-const jenisButtons = document.querySelectorAll('.jenis-btn');
-const fiturChecks = document.querySelectorAll('.fitur-check');
-const hasilHarga = document.getElementById('hasilHarga');
-const ctaWhatsapp = document.getElementById('ctaWhatsapp');
-
-function formatRupiah(angka) {
-  return 'Rp' + angka.toLocaleString('id-ID');
-}
-
-function hitungTotal() {
-  if (!selectedJenis) {
-    hasilHarga.textContent = 'Pilih jenis project dulu';
-    return;
-  }
-
-  let total = selectedBase;
-  let fiturDipilih = [];
-
-  fiturChecks.forEach(check => {
-    if (check.checked) {
-      total += parseInt(check.dataset.harga);
-      fiturDipilih.push(check.dataset.nama);
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estimasi Harga — RND Solution</title>
+  <meta name="description" content="Hitung estimasi harga pembuatan website atau aplikasi sesuai kebutuhan kamu.">
+  <link rel="canonical" href="https://rndsolution.id/estimasi.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { bg: '#0B0F19', surface: '#131826', text: '#F5F5F7', muted: '#9CA3AF', accent: '#6EE7B7' },
+          fontFamily: { display: ['Sora', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+        }
+      }
     }
-  });
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PRHZB9MK99"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PRHZB9MK99');
+  </script>
+</head>
+<body class="bg-bg text-text font-display">
 
-  const totalMin = total;
-  const totalMax = Math.round(total * 1.3); // range +30% untuk estimasi kompleksitas
+  <nav class="fixed top-0 w-full z-50 bg-bg/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold tracking-tight">Nama<span class="text-accent">Studio</span></a>
+      <a href="/#kontak" class="bg-accent text-bg font-semibold text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">Konsultasi Gratis</a>
+    </div>
+  </nav>
 
-  hasilHarga.textContent = `${formatRupiah(totalMin)} - ${formatRupiah(totalMax)}`;
+  <section class="pt-32 pb-24 px-6 max-w-3xl mx-auto">
+    <span class="text-accent font-mono text-xs">// estimasi harga</span>
+    <h1 class="text-3xl md:text-5xl font-extrabold mt-3 mb-4">Hitung Estimasi Project Kamu</h1>
+    <p class="text-muted text-lg mb-12">
+      Pilih jenis project dan fitur yang kamu butuhkan, dapatkan estimasi kisaran harga dalam hitungan detik.
+    </p>
 
-  // Update pesan WhatsApp otomatis
-  const pesan = `Halo, saya tertarik dengan ${selectedNamaJenis}` +
-    (fiturDipilih.length ? ` dengan fitur tambahan: ${fiturDipilih.join(', ')}` : '') +
-    `. Estimasi yang saya lihat di website: ${formatRupiah(totalMin)} - ${formatRupiah(totalMax)}. Boleh info lebih lanjut?`;
+    <div class="bg-surface border border-white/10 rounded-2xl p-8">
 
-  ctaWhatsapp.href = `https://wa.me/62812xxxxxxx?text=${encodeURIComponent(pesan)}`;
-}
+      <!-- Step 1: Jenis Project -->
+      <div class="mb-8">
+        <label class="block text-sm font-semibold mb-4">1. Jenis Project</label>
+        <div id="jenisProject" class="grid sm:grid-cols-3 gap-3">
+          <button type="button" data-jenis="landing" data-base="1500000"
+            class="jenis-btn text-left p-4 rounded-xl border border-white/10 hover:border-accent/40 transition-colors">
+            <p class="font-semibold text-sm mb-1">Landing Page</p>
+            <p class="text-muted text-xs">1 halaman, fokus konversi</p>
+          </button>
+          <button type="button" data-jenis="website" data-base="3500000"
+            class="jenis-btn text-left p-4 rounded-xl border border-white/10 hover:border-accent/40 transition-colors">
+            <p class="font-semibold text-sm mb-1">Website Bisnis</p>
+            <p class="text-muted text-xs">Multi-halaman, company profile</p>
+          </button>
+          <button type="button" data-jenis="aplikasi" data-base="8000000"
+            class="jenis-btn text-left p-4 rounded-xl border border-white/10 hover:border-accent/40 transition-colors">
+            <p class="font-semibold text-sm mb-1">Aplikasi Custom</p>
+            <p class="text-muted text-xs">Sistem/aplikasi dengan backend</p>
+          </button>
+        </div>
+      </div>
 
-jenisButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    jenisButtons.forEach(b => b.classList.remove('border-accent', 'bg-accent/10'));
-    btn.classList.add('border-accent', 'bg-accent/10');
+      <!-- Step 2: Fitur Tambahan -->
+      <div class="mb-8">
+        <label class="block text-sm font-semibold mb-4">2. Fitur Tambahan (opsional)</label>
+        <div id="fiturList" class="space-y-3">
+          <label class="flex items-center justify-between p-4 rounded-xl border border-white/10 cursor-pointer hover:border-accent/40 transition-colors">
+            <span class="text-sm">Sistem Login & Member</span>
+            <input type="checkbox" class="fitur-check" data-harga="1000000" data-nama="Sistem Login & Member">
+          </label>
+          <label class="flex items-center justify-between p-4 rounded-xl border border-white/10 cursor-pointer hover:border-accent/40 transition-colors">
+            <span class="text-sm">Integrasi Pembayaran Online</span>
+            <input type="checkbox" class="fitur-check" data-harga="1500000" data-nama="Integrasi Pembayaran Online">
+          </label>
+          <label class="flex items-center justify-between p-4 rounded-xl border border-white/10 cursor-pointer hover:border-accent/40 transition-colors">
+            <span class="text-sm">Dashboard Admin</span>
+            <input type="checkbox" class="fitur-check" data-harga="2000000" data-nama="Dashboard Admin">
+          </label>
+          <label class="flex items-center justify-between p-4 rounded-xl border border-white/10 cursor-pointer hover:border-accent/40 transition-colors">
+            <span class="text-sm">CMS (Edit konten tanpa coding)</span>
+            <input type="checkbox" class="fitur-check" data-harga="1000000" data-nama="CMS">
+          </label>
+          <label class="flex items-center justify-between p-4 rounded-xl border border-white/10 cursor-pointer hover:border-accent/40 transition-colors">
+            <span class="text-sm">Multi-bahasa (ID/EN)</span>
+            <input type="checkbox" class="fitur-check" data-harga="800000" data-nama="Multi-bahasa">
+          </label>
+        </div>
+      </div>
 
-    selectedJenis = btn.dataset.jenis;
-    selectedBase = parseInt(btn.dataset.base);
-    selectedNamaJenis = btn.querySelector('p').textContent;
+      <!-- Hasil -->
+      <div class="border-t border-white/10 pt-8">
+        <p class="text-muted text-sm mb-2">Estimasi Harga</p>
+        <p id="hasilHarga" class="text-3xl md:text-4xl font-extrabold text-accent mb-1">Pilih jenis project dulu</p>
+        <p class="text-muted text-xs mb-6">*Harga final bisa berbeda tergantung kompleksitas detail kebutuhan</p>
 
-    hitungTotal();
-  });
-});
+        <a id="ctaWhatsapp" href="#" target="_blank"
+           class="block text-center bg-accent text-bg font-semibold px-6 py-3.5 rounded-full hover:opacity-90 transition-opacity">
+          Konsultasikan Kebutuhan Ini →
+        </a>
+      </div>
+    </div>
+  </section>
 
-fiturChecks.forEach(check => {
-  check.addEventListener('change', hitungTotal);
-});
+  <footer class="px-6 py-10 border-t border-white/5">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <a href="/" class="text-lg font-extrabold">Nama<span class="text-accent">Studio</span></a>
+      <p class="text-muted text-sm font-mono">© 2026 NamaStudio.</p>
+    </div>
+  </footer>
+
+  <script src="estimasi.js"></script>
+</body>
+</html>
