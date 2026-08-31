@@ -40,4 +40,4 @@ Tidak jarang bisnis butuh keduanya — website untuk menarik calon pelanggan bar
 
 \---
 
-Masih bingung mana yang paling cocok untuk kebutuhan spesifik kamu? Coba [[konsultasikan langsung](/#kontak)](/#kontak) dengan kami, atau cek dulu [[estimasi harganya](/estimasi.html)] untuk kedua opsi.
+Masih bingung mana yang paling cocok untuk kebutuhan spesifik kamu? Coba \[[konsultasikan langsung](/#kontak)](/#kontak) dengan kami, atau cek dulu \[[estimasi harganya](/estimasi.html)] untuk kedua opsi.
