@@ -1,5 +1,6 @@
 ---
 title: "Website vs Aplikasi: Mana yang Lebih Cocok untuk Bisnis Kamu?"
+kategori: Tips Bisnis
 date: 2026-08-30T21:12:00.000+07:00
 thumbnail: /assets/uploads/gemini_generated_image_yknzfxyknzfxyknz.jpeg
 excerpt: Masih bingung memilih antara website atau aplikasi untuk bisnis? Simak
