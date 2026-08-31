@@ -40,4 +40,4 @@ Daripada menebak-nebak, cara paling praktis adalah mendiskusikan kebutuhan spesi
 
 \---
 
-Kalau kamu penasaran dengan kisaran harga sesuai kebutuhan kamu, coba gunakan [[kalkulator estimasi harga](/estimasi.html)] kami — isi jenis project dan fitur yang dibutuhkan, langsung dapat gambaran kasarannya.
+Kalau kamu penasaran dengan kisaran harga sesuai kebutuhan kamu, coba gunakan \[[kalkulator estimasi harga](/estimasi.html)] kami — isi jenis project dan fitur yang dibutuhkan, langsung dapat gambaran kasarannya.
