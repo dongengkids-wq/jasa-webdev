@@ -31,7 +31,12 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://rndsolution.id/artikel.html?slug=content/artikel/berapa-biaya-jasa-pembuatan-website-di-indonesia-ini-kisarannya</loc>
+    <loc>https://rndsolution.id/artikel.html?slug=5-tanda-bisnis-kamu-sudah-waktunya-punya-website</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rndsolution.id/artikel.html?slug=berapa-biaya-jasa-pembuatan-website-di-indonesia-ini-kisarannya</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
