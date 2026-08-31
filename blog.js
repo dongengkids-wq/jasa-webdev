@@ -84,7 +84,7 @@ function renderCards() {
 
   container.innerHTML = filtered.map(a => `
     <a href="/artikel.html?slug=${a.slug}" class="group bg-surface border border-white/10 rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-300">
-      ${a.thumbnail ? `<img src="${a.thumbnail}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">` : ''}
+      ${a.thumbnail ? `<img src="${a.thumbnail}" alt="${a.title || 'Artikel'}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">` : ''}
       <div class="p-6">
         <div class="flex items-center gap-2 mb-2">
           ${a.kategori ? `<span class="text-accent font-mono text-xs">${a.kategori}</span>` : ''}
@@ -160,13 +160,38 @@ async function renderDetail() {
   const descEl = document.getElementById('metaDescription');
   if (descEl) descEl.setAttribute('content', data.excerpt || '');
 
+  const pageUrl = `https://rndsolution.id/artikel.html?slug=${slug}`;
+const img = data.thumbnail || 'https://rndsolution.id/assets/og-image.jpg';
+const fullTitle = `${data.title || 'Artikel'} — RND Solution`;
+
+const canonicalEl = document.getElementById('canonicalLink');
+if (canonicalEl) canonicalEl.setAttribute('href', pageUrl);
+
+const ogUrlEl = document.getElementById('ogUrl');
+if (ogUrlEl) ogUrlEl.setAttribute('content', pageUrl);
+
+const ogTitleEl = document.getElementById('ogTitle');
+if (ogTitleEl) ogTitleEl.setAttribute('content', fullTitle);
+
+const ogDescEl = document.getElementById('ogDescription');
+if (ogDescEl) ogDescEl.setAttribute('content', data.excerpt || '');
+
+const ogImageEl = document.getElementById('ogImage');
+if (ogImageEl) ogImageEl.setAttribute('content', img);
+
+const twitterTitleEl = document.getElementById('twitterTitle');
+if (twitterTitleEl) twitterTitleEl.setAttribute('content', fullTitle);
+
+const twitterDescEl = document.getElementById('twitterDescription');
+if (twitterDescEl) twitterDescEl.setAttribute('content', data.excerpt || '');
+
   container.innerHTML = `
     <div class="flex items-center gap-3 mb-3">
       ${data.kategori ? `<span class="text-accent font-mono text-xs bg-accent/10 px-3 py-1 rounded-full">${data.kategori}</span>` : ''}
       <p class="text-muted font-mono text-xs">${data.date ? new Date(data.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}</p>
     </div>
     <h1 class="text-3xl md:text-5xl font-extrabold mb-8">${data.title || ''}</h1>
-    ${data.thumbnail ? `<img src="${data.thumbnail}" class="w-full rounded-2xl mb-10 border border-white/10">` : ''}
+    ${data.thumbnail ? `<img src="${data.thumbnail}" alt="${data.title || 'Artikel'}" class="w-full rounded-2xl mb-10 border border-white/10">` : ''}
     <div class="prose prose-invert max-w-none text-muted leading-relaxed">
       ${DOMPurify.sanitize(marked.parse(body))}
     </div>
