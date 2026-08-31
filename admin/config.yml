@@ -14,12 +14,12 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-  - { label: "Judul", name: "title", widget: "string" }
-  - { label: "Kategori", name: "kategori", widget: "select", options: ["Tips Bisnis", "Tutorial", "Studi Kasus", "Berita"], default: "Tips Bisnis" }
-  - { label: "Tanggal", name: "date", widget: "datetime" }
-  - { label: "Gambar Cover", name: "thumbnail", widget: "image", required: false }
-  - { label: "Ringkasan", name: "excerpt", widget: "text" }
-  - { label: "Isi Artikel", name: "body", widget: "markdown" }
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Kategori", name: "kategori", widget: "select", options: ["Tips Bisnis", "Tutorial", "Studi Kasus", "Berita"], default: "Tips Bisnis" }
+      - { label: "Tanggal", name: "date", widget: "datetime" }
+      - { label: "Gambar Cover", name: "thumbnail", widget: "image", required: false }
+      - { label: "Ringkasan", name: "excerpt", widget: "text" }
+      - { label: "Isi Artikel", name: "body", widget: "markdown" }
 
   - name: "halaman"
     label: "Konten Halaman"
