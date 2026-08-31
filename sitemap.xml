@@ -30,4 +30,9 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://rndsolution.id/artikel.html?slug=content/artikel/berapa-biaya-jasa-pembuatan-website-di-indonesia-ini-kisarannya</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
