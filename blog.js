@@ -157,8 +157,9 @@ async function renderDetail() {
 
   document.getElementById('pageTitle').textContent = `${data.title || 'Artikel'} — RND Solution`;
 
-  const descEl = document.getElementById('metaDescription');
-  if (descEl) descEl.setAttribute('content', data.excerpt || '');
+  const seoDesc = data.meta_description || data.excerpt || '';
+const descEl = document.getElementById('metaDescription');
+if (descEl) descEl.setAttribute('content', seoDesc);
 
   const pageUrl = `https://rndsolution.id/artikel.html?slug=${slug}`;
 const img = data.thumbnail || 'https://rndsolution.id/assets/og-image.jpg';
@@ -174,7 +175,7 @@ const ogTitleEl = document.getElementById('ogTitle');
 if (ogTitleEl) ogTitleEl.setAttribute('content', fullTitle);
 
 const ogDescEl = document.getElementById('ogDescription');
-if (ogDescEl) ogDescEl.setAttribute('content', data.excerpt || '');
+if (ogDescEl) ogDescEl.setAttribute('content', seoDesc);
 
 const ogImageEl = document.getElementById('ogImage');
 if (ogImageEl) ogImageEl.setAttribute('content', img);
@@ -183,7 +184,7 @@ const twitterTitleEl = document.getElementById('twitterTitle');
 if (twitterTitleEl) twitterTitleEl.setAttribute('content', fullTitle);
 
 const twitterDescEl = document.getElementById('twitterDescription');
-if (twitterDescEl) twitterDescEl.setAttribute('content', data.excerpt || '');
+if (twitterDescEl) twitterDescEl.setAttribute('content', seoDesc);
 
   container.innerHTML = `
     <div class="flex items-center gap-3 mb-3">

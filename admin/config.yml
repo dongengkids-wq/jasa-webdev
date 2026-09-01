@@ -4,6 +4,8 @@ backend:
   branch: main
   base_url: https://rndsolution-oauth.onrender.com
 
+publish_mode: editorial_workflow
+
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
@@ -12,13 +14,18 @@ collections:
     label: "Artikel"
     folder: "content/artikel"
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
+    view_groups:
+      - label: "Kategori"
+        field: kategori
     fields:
       - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Slug URL", name: "slug", widget: "string", hint: "Bagian akhir URL artikel, pendek & mengandung kata kunci. Contoh: biaya-jasa-website" }
       - { label: "Kategori", name: "kategori", widget: "select", options: ["Tips Bisnis", "Tutorial", "Studi Kasus", "Berita"], default: "Tips Bisnis" }
       - { label: "Tanggal", name: "date", widget: "datetime" }
-      - { label: "Gambar Cover", name: "thumbnail", widget: "image", required: false }
-      - { label: "Ringkasan", name: "excerpt", widget: "text" }
+      - { label: "Gambar Cover", name: "thumbnail", widget: "image", required: false, media_folder: "/assets/uploads", public_folder: "/assets/uploads" }
+      - { label: "Ringkasan (tampil di card blog)", name: "excerpt", widget: "text" }
+      - { label: "Meta Description SEO (opsional, kosongkan untuk pakai Ringkasan)", name: "meta_description", widget: "text", required: false }
       - { label: "Isi Artikel", name: "body", widget: "markdown" }
 
   - name: "halaman"
