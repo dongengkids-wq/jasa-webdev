@@ -1,5 +1,5 @@
 (function () {
-  const API_BASE = 'https://rndsolution-agent.onrender.com';
+  const API_BASE = 'https://rndsolution.id/agent';
   let history = [];
   let isOpen = false;
 
