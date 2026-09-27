@@ -16,3 +16,14 @@ html.light .text-muted { color: #4B5563 !important; }
 html.light .hover\:text-text:hover { color: #0B0F19 !important; }
 html.light .text-accent { color: #047857 !important; }
 html.light .hover\:text-accent:hover { color: #047857 !important; }
+
+.hero-crossfade-img {
+  opacity: 0;
+  animation: heroCrossfade 9s infinite ease-in-out;
+}
+
+@keyframes heroCrossfade {
+  0%, 5% { opacity: 0; }
+  10%, 28% { opacity: 1; }
+  33%, 100% { opacity: 0; }
+}
