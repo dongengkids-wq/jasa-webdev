@@ -98,12 +98,21 @@ function injectSchema(data, slug) {
   document.head.appendChild(script);
 }
 
+function setNoindex() {
+  if (document.querySelector('meta[name="robots"]')) return;
+  const m = document.createElement('meta');
+  m.name = 'robots';
+  m.content = 'noindex';
+  document.head.appendChild(m);
+}
+
 async function renderDetail() {
   const container = document.getElementById('articleContent');
   if (!container) return;
 
   const slug = new URLSearchParams(window.location.search).get('slug');
   if (!slug) {
+    setNoindex();
     container.innerHTML = '<p class="text-muted">Artikel tidak ditemukan.</p>';
     return;
   }
@@ -120,6 +129,7 @@ async function renderDetail() {
 
   const res = await fetch(`/api/articles/${slug}`);
   if (!res.ok) {
+    if (res.status === 404) setNoindex();
     container.innerHTML = '<p class="text-muted">Artikel tidak ditemukan.</p>';
     return;
   }
@@ -137,8 +147,14 @@ async function renderDetail() {
   const img = data.thumbnail || 'https://rndsolution.id/assets/og-image.jpg';
   const fullTitle = `${data.title || 'Artikel'} — RND Solution`;
 
-  const canonicalEl = document.getElementById('canonicalLink');
-  if (canonicalEl) canonicalEl.setAttribute('href', pageUrl);
+  let canonicalEl = document.getElementById('canonicalLink');
+  if (!canonicalEl) {
+    canonicalEl = document.createElement('link');
+    canonicalEl.rel = 'canonical';
+    canonicalEl.id = 'canonicalLink';
+    document.head.appendChild(canonicalEl);
+  }
+  canonicalEl.setAttribute('href', pageUrl);  
 
   const ogUrlEl = document.getElementById('ogUrl');
   if (ogUrlEl) ogUrlEl.setAttribute('content', pageUrl);
