@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /leads.html
 
 Sitemap: https://rndsolution.id/sitemap.xml
