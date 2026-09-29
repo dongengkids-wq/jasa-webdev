@@ -17,6 +17,9 @@ fetch(`/api/settings/kontak?t=${Date.now()}`)
     if (!kontak) return;
     document.querySelectorAll('.js-wa-link').forEach(el => {
       el.href = `https://wa.me/${kontak.whatsapp}`;
+      el.addEventListener('click', () => {
+        if (typeof fbq === 'function') fbq('track', 'Contact');
+      });
     });
     document.querySelectorAll('.js-email-link').forEach(el => {
       el.href = `mailto:${kontak.email}`;
@@ -35,6 +38,7 @@ async function handleSubmit(event) {
     });
 
     if (response.ok) {
+      if (typeof fbq === 'function') fbq('track', 'Lead');
       form.innerHTML = '<p class="text-accent text-center font-semibold">✅ Pesan terkirim! Kami akan segera menghubungi kamu.</p>';
     } else {
       alert('Terjadi kesalahan, coba lagi atau hubungi lewat WhatsApp.');

@@ -93,6 +93,12 @@ function hitungTotal() {
     `. Estimasi yang saya lihat di website: ${formatRupiah(totalMin)} - ${formatRupiah(totalMax)}. Boleh info lebih lanjut?`;
 
   ctaWhatsapp.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(pesan)}`;
+  if (typeof fbq === 'function') {
+    fbq('trackCustom', 'KalkulatorDigunakan', { value: totalMin, currency: 'IDR' });
+  }
+  ctaWhatsapp.addEventListener('click', () => {
+    if (typeof fbq === 'function') fbq('track', 'Contact');
+  }, { once: true });
 }
 
 async function init() {
