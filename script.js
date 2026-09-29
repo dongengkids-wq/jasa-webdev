@@ -18,7 +18,8 @@ fetch(`/api/settings/kontak?t=${Date.now()}`)
     document.querySelectorAll('.js-wa-link').forEach(el => {
       el.href = `https://wa.me/${kontak.whatsapp}`;
       el.addEventListener('click', () => {
-        if (typeof fbq === 'function') fbq('track', 'Contact');
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'contact_click' });
       });
     });
     document.querySelectorAll('.js-email-link').forEach(el => {
@@ -38,7 +39,8 @@ async function handleSubmit(event) {
     });
 
     if (response.ok) {
-      if (typeof fbq === 'function') fbq('track', 'Lead');
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'lead_submit' });
       form.innerHTML = '<p class="text-accent text-center font-semibold">✅ Pesan terkirim! Kami akan segera menghubungi kamu.</p>';
     } else {
       alert('Terjadi kesalahan, coba lagi atau hubungi lewat WhatsApp.');
