@@ -5,7 +5,6 @@ function initMobileMenu() {
   menuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
     mobileMenu.classList.toggle('flex');
-    document.body.classList.toggle('overflow-hidden');
   });
 }
 window.initMobileMenu = initMobileMenu;
